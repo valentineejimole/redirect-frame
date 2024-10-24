@@ -1,5 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -24,8 +25,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
-      <img src={'/video.png'}/>
-    </>
+    <Image 
+      src={'/video.png'} 
+      alt='Video thumbnail' 
+      width={500} // Adjust width as needed
+      height={300} // Adjust height as needed
+    />
   );
 }
